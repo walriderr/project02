@@ -46,12 +46,144 @@ namespace Project02
                 {
                     if (textFind.Text == listCar[i].numberCar)
                     {
+                        Car car = new Car();
+                        car = listCar[i];
 
+                        ShowCar(car);
                     }
-
                 }
-            }
-               
+            }           
+        }
+
+        private void AddCar_Click(object sender, RoutedEventArgs e)
+        {
+            Car car = new Car
+            {
+                numberCar = NumberCar.Text,
+                modelCar = ModelCar.Text,
+                fullname = FullName.Text,
+                date = Date.Text,
+                price = Convert.ToInt32(Price.Text),
+                discount = Convert.ToInt32(Discount.Text),
+                duty = Convert.ToInt32(Duty.Text)
+            };
+            listCar.Add(car);
+        }
+
+        public void ShowCar(Car car)
+        {
+            Grid grid = new Grid();
+
+            grid.RowDefinitions.Add(new RowDefinition());
+            grid.RowDefinitions.Add(new RowDefinition());
+            grid.RowDefinitions.Add(new RowDefinition());
+            grid.RowDefinitions.Add(new RowDefinition());
+            grid.RowDefinitions.Add(new RowDefinition());
+            grid.RowDefinitions.Add(new RowDefinition());
+            grid.RowDefinitions.Add(new RowDefinition());
+
+            Border border = new Border
+            {
+                Width = 400,
+                BorderThickness = new Thickness(2),
+                CornerRadius = new CornerRadius(40, 20, 20, 20),
+                BorderBrush = Brushes.Black,
+                Margin = new Thickness(20, 20, 0, 0)
+            };
+
+            TextBlock fnText = new TextBlock
+            {
+                FontFamily = new FontFamily("SFPRODISPLAYMEDIUM.OTF"),
+                Foreground = Brushes.Black,
+                Margin = new Thickness(20, 10, 0, 0),
+                Width = 700,
+                FontSize = 20,
+                Text = "Номер автомобиля: " + car.numberCar + "\n"
+            };
+
+            TextBlock fnText1 = new TextBlock
+            {
+                FontFamily = new FontFamily("SFPRODISPLAYMEDIUM.OTF"),
+                Foreground = Brushes.Black,
+                Margin = new Thickness(20, 10, 0, 0),
+                Width = 700,
+                FontSize = 20,
+                Text = "Модель автомобиля: " + car.modelCar + "\n"
+            };
+
+            TextBlock fnText2 = new TextBlock
+            {
+                FontFamily = new FontFamily("SFPRODISPLAYMEDIUM.OTF"),
+                Foreground = Brushes.Black,
+                Margin = new Thickness(20, 10, 0, 0),
+                Width = 700,
+                FontSize = 20,
+                Text = "ФИО: " + car.fullname + "\n"
+            };
+
+            TextBlock fnText3 = new TextBlock
+            {
+                FontFamily = new FontFamily("SFPRODISPLAYMEDIUM.OTF"),
+                Foreground = Brushes.Black,
+                Margin = new Thickness(20, 10, 0, 0),
+                Width = 700,
+                FontSize = 20,
+                Text = "Время въезда : " + car.date + "\n"
+            };
+
+            int price1 = car.price - ((car.price / 100) * car.discount);
+
+            TextBlock fnText4 = new TextBlock
+            {
+                FontFamily = new FontFamily("SFPRODISPLAYMEDIUM.OTF"),
+                Foreground = Brushes.Black,
+                Margin = new Thickness(20, 10, 0, 0),
+                Width = 700,
+                FontSize = 20,
+                
+                Text = "Цена: " + price1 + "\n"
+            };
+
+            TextBlock fnText5 = new TextBlock
+            {
+                FontFamily = new FontFamily("SFPRODISPLAYMEDIUM.OTF"),
+                Foreground = Brushes.Black,
+                Margin = new Thickness(20, 10, 0, 0),
+                Width = 700,
+                FontSize = 20,
+                Text = "Скидка: " + car.discount + "\n"
+            };
+
+            TextBlock fnText6 = new TextBlock
+            {
+                FontFamily = new FontFamily("SFPRODISPLAYMEDIUM.OTF"),
+                Foreground = Brushes.Black,
+                Margin = new Thickness(20, 10, 0, 0),
+                Width = 700,
+                FontSize = 20,
+                Text = "Задолженность: " + car.duty + "\n"
+            };
+
+            wrap.Height += border.Height;
+
+            Grid.SetRow(fnText, 0);
+            grid.Children.Add(fnText);
+            Grid.SetRow(fnText1, 1);
+            grid.Children.Add(fnText1);
+            Grid.SetRow(fnText2, 2);
+            grid.Children.Add(fnText2);
+            Grid.SetRow(fnText3, 3);
+            grid.Children.Add(fnText3);
+            Grid.SetRow(fnText4, 4);
+            grid.Children.Add(fnText4);
+            Grid.SetRow(fnText5, 5);
+            grid.Children.Add(fnText5);
+            Grid.SetRow(fnText6, 6);
+            grid.Children.Add(fnText6);
+
+            border.Child = grid;
+
+            wrap.Children.Add(border);
         }
     }
 }

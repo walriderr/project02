@@ -5,15 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project02"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700
+        Title="Касса" Height="700
         " Width="800">
     <Grid>
         <TextBox x:Name="textFind" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="65,60,0,0"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Введите номер автомобиля" VerticalAlignment="Top" Margin="50,39,0,0"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="553" Margin="350,60,0,0" VerticalAlignment="Top" Width="400"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="553" Margin="237,60,0,0" VerticalAlignment="Top" Width="522">
+            <Grid>
+                <ScrollViewer Margin="0,0,-1,0">
+                    <WrapPanel x:Name="wrap" Orientation="Vertical"/>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+        
 
         <Button x:Name="FindCar" Content="Найти" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="84,102,0,0" Foreground="White" Background="Black" Click="FindCar_Click" />
-        <Button x:Name="AddCar" Content="Добавить автомобиль" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Margin="50,551,0,0" Foreground="White" Background="Black"/>
+        <Button x:Name="AddCar" Content="Добавить автомобиль" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Margin="50,551,0,0" Foreground="White" Background="Black" Click="AddCar_Click"/>
         <TextBox x:Name="NumberCar" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="65,163,0,0"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Введите номер автомобиля" VerticalAlignment="Top" Margin="50,142,0,0"/>
         <TextBox x:Name="ModelCar" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="65,212,0,0"/>
@@ -25,10 +32,12 @@
         <TextBox x:Name="Price" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="65,377,0,0"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="50,356,0,0"><Run Text="Введите "/><Run Text="стоимость стоянки"/></TextBlock>
         <TextBox x:Name="Discount" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="65,436,0,0"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="84,415,0,0"><Run Text="Введите "/><Run Text="скидку"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="84,415,0,0"><Run Text="Введите "/><Run Text="скидку%"/></TextBlock>
         <TextBox x:Name="Duty" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="65,503,0,0"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="38,482,0,0" Width="194"><Run Text="Введите задолжен"/><Run Text="ность по оплате"/></TextBlock>
-        <TextBlock x:Name="Output" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="360,67,0,0" Height="538" Width="381"/>
+        <TextBlock x:Name="Output" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="237,67,0,0" Height="538" Width="504"/>
+
+
 
 
 
