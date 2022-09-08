@@ -101,5 +101,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="car.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1636596567_15-papik-pro-p-fon-parkovka-risunok-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="png-transparent-close-remove-delete-x-cross-reject-basic-user-interface-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="krest %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
