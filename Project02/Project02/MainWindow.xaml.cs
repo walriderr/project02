@@ -1,17 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Project02
 {
@@ -40,7 +31,7 @@ namespace Project02
 
         private void FindCar_Click(object sender, RoutedEventArgs e)
         {
-            if(textFind.Text != "")
+            if (textFind.Text != "")
             {
                 for (int i = 0; i < listCar.Count; i++)
                 {
@@ -51,7 +42,7 @@ namespace Project02
 
                         ShowCar(car);
                     }
-                    
+
                 }
             }
             else
@@ -73,6 +64,14 @@ namespace Project02
                 duty = Convert.ToInt32(Duty.Text)
             };
             listCar.Add(car);
+
+            NumberCar.Text = "";
+            ModelCar.Text = "";
+            FullName.Text = "";
+            Date.Text = "";
+            Price.Text = "";
+            Discount.Text = "";
+            Duty.Text = "";
         }
 
         public void ShowCar(Car car)
@@ -146,7 +145,7 @@ namespace Project02
                 Margin = new Thickness(20, 10, 0, 0),
                 Width = 700,
                 FontSize = 20,
-                
+
                 Text = "Цена: " + price1 + "\n"
             };
 
